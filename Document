@@ -1,0 +1,26 @@
+FRONTEND OF FOOD ORDERING WEBAPP:
+
+* npx create-react-app .
+  "." indicates the project will be formed in exsting folder itself rather than creating new one 
+
+* go to Tailwind css website and search for installation cmd
+   npm install -D tailwindcss
+   npx tailwindcss init  
+
+* paste configuration inside talwind.config.js
+  /** @type {import('tailwindcss').Config} */
+  module.exports = {
+  content: ["./src/**/*.{html,js}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+  } 
+  
+* paste tailwind css directives inside index.css
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+  
+* To include the Material UI(MUI) 
+  npm install @mui/material @emotion/react @emotion/styled
