@@ -34,3 +34,16 @@ build/
 
 # Ignore Eclipse metadata
 .metadata/
+.metadata/.log
+.metadata/.log
+.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+server-side/.gitignore
+.metadata/.log
+.metadata/.plugins/org.eclipse.core.resources/.projects/.org.eclipse.egit.core.cmp/.markers.snap
+.metadata/.plugins/org.eclipse.core.resources/.projects/.org.eclipse.egit.core.cmp/.syncinfo.snap
+.metadata/.plugins/org.eclipse.core.resources/.projects/server-side/.markers.snap
+.metadata/.plugins/org.eclipse.core.resources/.projects/server-side/.syncinfo.snap
+.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap
+.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps
+.metadata/.plugins/org.eclipse.m2e.core/workspaceState.ser
