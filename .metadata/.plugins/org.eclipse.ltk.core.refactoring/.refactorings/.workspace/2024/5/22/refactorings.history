@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename Java project &apos;Food-Ordering&apos; to &apos;server-side&apos;&#x0A;- Original element: &apos;Food-Ordering&apos;&#x0A;- Renamed element: &apos;Food-Ordering&apos;&#x0A;- Update references to refactored element" description="Rename Java project &apos;Food-Ordering&apos;" flags="7" id="org.eclipse.jdt.ui.rename.java.project" input="=Food-Ordering" name="server-side" references="true" stamp="1716695598243" version="1.0"/>
-</session>

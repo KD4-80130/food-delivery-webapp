@@ -32,7 +32,7 @@ build/
 ### VS Code ###
 .vscode/
 
-# Ignore Eclipse metadata
+### Ignore Eclipse metadata ###
 .metadata/
 .metadata/.log
 .metadata/.log
