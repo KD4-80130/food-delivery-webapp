@@ -10,10 +10,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "`order`")
+@Table(name = "`orders`")
 public class Order {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	
+	//@JsonIgnore
+	//ManyToOne
+	//private Restaurant restaurant;
 }

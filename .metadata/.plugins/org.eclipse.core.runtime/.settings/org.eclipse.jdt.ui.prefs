@@ -11,6 +11,7 @@ content_assist_disable_completion_trigger_chars=false
 content_assist_fill_method_arguments=true
 content_assist_guess_method_arguments=true
 content_assist_insert_completion=false
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.lang.Enum"><rhs name\="jakarta.persistence.GenerationType"/><rhs name\="jakarta.persistence.CascadeType"/></lhs><lhs name\="java.lang.constant.Constable"><rhs name\="jakarta.persistence.GenerationType"/><rhs name\="jakarta.persistence.CascadeType"/></lhs></history>
 content_assist_number_of_computers=14
 content_assist_parameters_background=52,57,61
 content_assist_parameters_foreground=238,238,238
