@@ -12,17 +12,14 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrderItem {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class OrderItem extends BaseEntity {
 
     @ManyToOne
     private Food food;
 
     private int quantity;
 
-    private long totalprice;
+    private Long totalprice;
 
     private List<String> ingredients;
 

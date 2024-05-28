@@ -15,11 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "`orders`")
-public class Order {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+public class Order extends BaseEntity {
 
 	@ManyToOne
 	private User customer;
@@ -39,6 +35,8 @@ public class Order {
 
 	@OneToMany
 	private List<OrderItem> items;
+	
+//	private Payment payment;
 
 	private int totalItem;
 

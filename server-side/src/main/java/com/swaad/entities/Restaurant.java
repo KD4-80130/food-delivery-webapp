@@ -15,10 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Restaurant {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+public class Restaurant extends BaseEntity {
 
 	@OneToOne
 	private User owner;
