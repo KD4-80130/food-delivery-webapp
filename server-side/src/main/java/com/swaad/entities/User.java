@@ -26,7 +26,7 @@ public class User extends BaseEntity {
 	
 	private String password;
 	
-	private USER_ROLE role;
+	private USER_ROLE role =USER_ROLE.ROLE_CUSTOMER;
 	
 	//one user can order multiple times
 	@JsonIgnore
