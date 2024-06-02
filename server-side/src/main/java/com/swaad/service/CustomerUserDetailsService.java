@@ -1,6 +1,5 @@
 package com.swaad.service;
 
-
 import com.swaad.entities.USER_ROLE;
 import com.swaad.entities.User;
 import com.swaad.repositories.UserRepository;
@@ -17,24 +16,21 @@ import java.util.List;
 
 @Service
 public class CustomerUserDetailsService implements UserDetailsService {
-    @Autowired
-    private UserRepository userRepository;
+	@Autowired
+	private UserRepository userRepository;
 
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		User user = userRepository.findByEmail(username);
+		if (user == null) {
+			throw new UsernameNotFoundException("user not found with email: " + username);
+		}
+		USER_ROLE role = user.getRole();
 
-    @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user=userRepository.findByEmail(username);
-        if(user==null)
-        {
-            throw new UsernameNotFoundException("user not found with email: "+username);
-        }
-        USER_ROLE role = user.getRole();
+		List<GrantedAuthority> authorities = new ArrayList<>();
 
-        List<GrantedAuthority> authorities=new ArrayList<>();
+		authorities.add(new SimpleGrantedAuthority(role.toString()));
 
-        authorities.add(new SimpleGrantedAuthority(role.toString()));
-
-
-        return new org.springframework.security.core.userdetails.User(user.getEmail(),user.getPassword(),authorities);
-    }
+		return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), authorities);
+	}
 }
