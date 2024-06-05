@@ -33,6 +33,7 @@ public class AppConfig {
 				.addFilterAfter(new JwtTokenValidator(), BasicAuthenticationFilter.class).csrf(csrf -> csrf.disable())
 				.cors(cors -> cors.configurationSource(corsConfigurationSource()));
 
+
 		return http.build();
 	}
 
@@ -42,7 +43,10 @@ public class AppConfig {
 
 			@Override
 			public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
-				// TODO Auto-generated method stub
+				// TODO Auto-gene
+				//
+				//
+				//     						rated method stub
 				CorsConfiguration cfg = new CorsConfiguration();
 
 				cfg.setAllowedOrigins(Arrays.asList("https://swaad-food.vercel.app/", "http://localhost:3000"));
