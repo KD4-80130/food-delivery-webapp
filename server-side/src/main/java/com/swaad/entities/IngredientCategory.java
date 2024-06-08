@@ -17,14 +17,14 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class IngrediantCategory extends BaseEntity {
-	
+public class IngredientCategory extends BaseEntity {
+
 	private String name;
-	
+
 	@JsonIgnore
 	@ManyToOne
 	private Restaurant restaurant;
-	
+
 	@OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
 	private List<IngredientsItem> ingredients = new ArrayList<>();
 }

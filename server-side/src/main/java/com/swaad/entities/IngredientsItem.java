@@ -18,7 +18,7 @@ public class IngredientsItem extends BaseEntity {
 	private String name;
 	
 	@ManyToOne
-	private IngrediantCategory category;
+	private IngredientCategory category;
 
 	@JsonIgnore
 	@ManyToOne
