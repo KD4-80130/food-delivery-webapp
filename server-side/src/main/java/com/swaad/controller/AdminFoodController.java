@@ -1,6 +1,5 @@
 package com.swaad.controller;
 
-
 import com.swaad.entities.Food;
 import com.swaad.entities.Restaurant;
 import com.swaad.entities.User;
@@ -19,42 +18,43 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/admin/food")
 public class AdminFoodController {
 
-    @Autowired
-    private  FoodService foodService;
+	@Autowired
+	private FoodService foodService;
 
-    @Autowired
-    private UserService userService;
+	@Autowired
+	private UserService userService;
 
-    @Autowired
-    private RestaurantService restaurantService;
+	@Autowired
+	private RestaurantService restaurantService;
 
-    @PostMapping
-    public ResponseEntity<Food> createFood(@RequestBody CreateFoodRequest req, @RequestHeader ("Authorization")String jwt) throws Exception {
-        User user=userService.findUserByJwtToken(jwt);
-        Restaurant restaurant=restaurantService.findRestaurantById(req.getRestaurantId());
-        Food food =foodService.createFood(req,req.getCategory(),restaurant);
+	@PostMapping
+	public ResponseEntity<Food> createFood(@RequestBody CreateFoodRequest req,
+			@RequestHeader("Authorization") String jwt) throws Exception {
+		User user = userService.findUserByJwtToken(jwt);
+		Restaurant restaurant = restaurantService.findRestaurantById(req.getRestaurantId());
+		Food food = foodService.createFood(req, req.getCategory(), restaurant);
 
-        return new ResponseEntity<>(food, HttpStatus.CREATED);
-    }
+		return new ResponseEntity<>(food, HttpStatus.CREATED);
+	}
 
+	@DeleteMapping("/{id}")
+	public ResponseEntity<MessageResponse> deleteFood(@PathVariable Long id, @RequestHeader("Authorization") String jwt)
+			throws Exception {
+		User user = userService.findUserByJwtToken(jwt);
+		foodService.deleteFood(id);
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity<MessageResponse> deleteFood(@PathVariable Long id , @RequestHeader ("Authorization")String jwt) throws Exception {
-        User user=userService.findUserByJwtToken(jwt);
-        foodService.deleteFood(id);
+		MessageResponse res = new MessageResponse();
+		res.setMessage("food deleted successfully");
+		return new ResponseEntity<>(res, HttpStatus.CREATED);
 
-        MessageResponse res =new MessageResponse();
-        res.setMessage("food deleted successfully");
-        return new ResponseEntity<>(res ,HttpStatus.CREATED);
+	}
 
-    }
+	@PutMapping("/{id}")
+	public ResponseEntity<Food> updateFoodAvailibiltyStatus(@PathVariable Long id,
+			@RequestHeader("Authorization") String jwt) throws Exception {
+		User user = userService.findUserByJwtToken(jwt);
+		Food food = foodService.updateAvailibilityStatus(id);
 
-
-    @PutMapping("/{id}")
-    public ResponseEntity<Food> updateFoodAvailibiltyStatus(@PathVariable Long id , @RequestHeader ("Authorization")String jwt) throws Exception {
-        User user=userService.findUserByJwtToken(jwt);
-        Food food = foodService.updateAvailibilityStatus(id);
-
-        return new ResponseEntity<>(food ,HttpStatus.CREATED);
-    }
+		return new ResponseEntity<>(food, HttpStatus.CREATED);
+	}
 }

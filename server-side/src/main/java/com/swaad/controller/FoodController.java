@@ -29,17 +29,21 @@ public class FoodController {
     @Autowired
     private RestaurantService restaurantService;
 
+//    {{url}}api/food/search?name=pizza
+    
     @GetMapping("/search")
-    public ResponseEntity<List<Food>> createFood(@RequestParam String name, @RequestHeader("Authorization")String jwt) throws Exception {
+    public ResponseEntity<List<Food>> searchFood(@RequestParam String name, @RequestHeader("Authorization")String jwt) throws Exception {
         User user=userService.findUserByJwtToken(jwt);
         List<Food> foods =foodService.searchFood(name);
 
 
-        return new ResponseEntity<>(foods, HttpStatus.CREATED);
+        return new ResponseEntity<>(foods, HttpStatus.OK);
     }
 
 
 
+//    {{url}}api/food/restaurant/2?vegetarian=true&seasonal=false&nonveg=true
+    
     @GetMapping("/restaurant/{restaurantId}")
     public ResponseEntity<List<Food>> getRestaurantFood(@RequestParam boolean vegetarian,
                                                         @RequestParam boolean seasonal,
