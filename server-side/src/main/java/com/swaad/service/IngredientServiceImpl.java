@@ -21,6 +21,7 @@ public class IngredientServiceImpl implements IngredientsService {
 	@Autowired
 	private IngredientCategoryRepository ingredientCategoryRepository;
 
+	@Autowired
 	private RestaurantService restaurantService;
 
 	@Override

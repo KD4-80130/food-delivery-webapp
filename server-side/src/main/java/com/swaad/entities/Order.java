@@ -28,24 +28,18 @@ public class Order extends BaseEntity {
 
 	private String orderStatus;
 
-	private Date creditAt;
+	private Date createdAt;
 
 	@ManyToOne
 	private Address deliveryAddress;
 
 	@OneToMany
 	private List<OrderItem> items;
-	
+
 //	private Payment payment;
 
 	private int totalItem;
 
 	private int totalPrice;
-
-
-
-
-
-
 
 }
