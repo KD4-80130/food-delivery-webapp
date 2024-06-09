@@ -43,10 +43,6 @@ public class AppConfig {
 
 			@Override
 			public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
-				// TODO Auto-gene
-				//
-				//
-				//     						rated method stub
 				CorsConfiguration cfg = new CorsConfiguration();
 
 				cfg.setAllowedOrigins(Arrays.asList("https://swaad-food.vercel.app/", "http://localhost:3000"));
