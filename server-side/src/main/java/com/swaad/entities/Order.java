@@ -40,6 +40,6 @@ public class Order extends BaseEntity {
 
 	private int totalItem;
 
-	private int totalPrice;
+	private Long totalPrice;
 
 }
