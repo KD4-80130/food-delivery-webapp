@@ -12,7 +12,19 @@ code {
     monospace;
 }
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.navbar-bg {
+  background-color: #30011E;
+  height: 60px; /* Adjust height as needed */
+  padding: 0 10px; /* Adjust padding as needed */
+  margin: 0; /* Ensure no margin around the navbar */
+  border-radius: 10px;
+}
+
+.heading {
+  color: #FFFFFF;
+  font-size: 1.5rem; /* Adjust font size as needed */
+}

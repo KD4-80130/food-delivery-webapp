@@ -1,11 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import Navbar from "./components/Navbar";
+import { lightTheme } from "./theme/LightTheme";
 
 function App() {
   return (
-    <div className="App">
-     <h1 className='text-blue-500'>Code with swasd</h1>
-    </div>
+    <ThemeProvider theme={lightTheme}>
+      <CssBaseline/>
+      <Navbar/>
+    </ThemeProvider>
+     
   );
 }
 
